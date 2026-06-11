@@ -214,7 +214,7 @@
             // 
             this.resultLst.FormattingEnabled = true;
             this.resultLst.ItemHeight = 16;
-            this.resultLst.Location = new System.Drawing.Point(855, 112);
+            this.resultLst.Location = new System.Drawing.Point(855, 111);
             this.resultLst.Name = "resultLst";
             this.resultLst.Size = new System.Drawing.Size(120, 116);
             this.resultLst.TabIndex = 18;
