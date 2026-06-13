@@ -91,6 +91,7 @@
             this.submitAnswerBtn.TabIndex = 11;
             this.submitAnswerBtn.Text = "Submit Answer";
             this.submitAnswerBtn.UseVisualStyleBackColor = true;
+            this.submitAnswerBtn.Click += new System.EventHandler(this.submitAnswerBtn_Click);
             // 
             // nextQuestionBtn
             // 
@@ -100,6 +101,7 @@
             this.nextQuestionBtn.TabIndex = 12;
             this.nextQuestionBtn.Text = "Next Question";
             this.nextQuestionBtn.UseVisualStyleBackColor = true;
+            this.nextQuestionBtn.Click += new System.EventHandler(this.nextQuestionBtn_Click);
             // 
             // questionTitleLbl
             // 

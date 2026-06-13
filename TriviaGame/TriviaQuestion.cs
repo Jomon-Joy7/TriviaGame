@@ -25,7 +25,7 @@ namespace TriviaGame
             set {  answer = value; }
         }
 
-        public TriviaQuestion(string question, string answer, string category)
+        public TriviaQuestion(string question, string answer, string category = "General")
         {
             Question = question;
             Answer = answer;
