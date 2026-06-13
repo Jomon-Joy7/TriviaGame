@@ -1,6 +1,6 @@
 ﻿namespace TriviaGame
 {
-    partial class triviaChallenge
+    partial class TriviaChallenge
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,8 @@
         {
             this.titleLbl = new System.Windows.Forms.Label();
             this.subTitleLbl = new System.Windows.Forms.Label();
-            this.playerNameLbl = new System.Windows.Forms.Label();
-            this.playerNameTxt = new System.Windows.Forms.TextBox();
             this.startGameBtn = new System.Windows.Forms.Button();
             this.howToPlayBtn = new System.Windows.Forms.Button();
-            this.optionARBtn = new System.Windows.Forms.RadioButton();
-            this.optionBRBtn = new System.Windows.Forms.RadioButton();
-            this.optionCRBtn = new System.Windows.Forms.RadioButton();
-            this.optionDRBtn = new System.Windows.Forms.RadioButton();
             this.submitAnswerBtn = new System.Windows.Forms.Button();
             this.nextQuestionBtn = new System.Windows.Forms.Button();
             this.questionTitleLbl = new System.Windows.Forms.Label();
@@ -47,6 +41,8 @@
             this.questionNumberLbl = new System.Windows.Forms.Label();
             this.resultLst = new System.Windows.Forms.ListBox();
             this.resultLbl = new System.Windows.Forms.Label();
+            this.answerTxt = new System.Windows.Forms.TextBox();
+            this.answerLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // titleLbl
@@ -69,22 +65,6 @@
             this.subTitleLbl.TabIndex = 1;
             this.subTitleLbl.Text = "----Test Your Knowledge and have Fun!----";
             // 
-            // playerNameLbl
-            // 
-            this.playerNameLbl.AutoSize = true;
-            this.playerNameLbl.Location = new System.Drawing.Point(12, 133);
-            this.playerNameLbl.Name = "playerNameLbl";
-            this.playerNameLbl.Size = new System.Drawing.Size(86, 16);
-            this.playerNameLbl.TabIndex = 2;
-            this.playerNameLbl.Text = "Player Name";
-            // 
-            // playerNameTxt
-            // 
-            this.playerNameTxt.Location = new System.Drawing.Point(121, 126);
-            this.playerNameTxt.Name = "playerNameTxt";
-            this.playerNameTxt.Size = new System.Drawing.Size(170, 22);
-            this.playerNameTxt.TabIndex = 3;
-            // 
             // startGameBtn
             // 
             this.startGameBtn.Location = new System.Drawing.Point(332, 126);
@@ -102,50 +82,6 @@
             this.howToPlayBtn.TabIndex = 5;
             this.howToPlayBtn.Text = "How To Play?";
             this.howToPlayBtn.UseVisualStyleBackColor = true;
-            // 
-            // optionARBtn
-            // 
-            this.optionARBtn.AutoSize = true;
-            this.optionARBtn.Location = new System.Drawing.Point(33, 291);
-            this.optionARBtn.Name = "optionARBtn";
-            this.optionARBtn.Size = new System.Drawing.Size(79, 20);
-            this.optionARBtn.TabIndex = 7;
-            this.optionARBtn.TabStop = true;
-            this.optionARBtn.Text = "Option A";
-            this.optionARBtn.UseVisualStyleBackColor = true;
-            // 
-            // optionBRBtn
-            // 
-            this.optionBRBtn.AutoSize = true;
-            this.optionBRBtn.Location = new System.Drawing.Point(34, 346);
-            this.optionBRBtn.Name = "optionBRBtn";
-            this.optionBRBtn.Size = new System.Drawing.Size(79, 20);
-            this.optionBRBtn.TabIndex = 8;
-            this.optionBRBtn.TabStop = true;
-            this.optionBRBtn.Text = "Option B";
-            this.optionBRBtn.UseVisualStyleBackColor = true;
-            // 
-            // optionCRBtn
-            // 
-            this.optionCRBtn.AutoSize = true;
-            this.optionCRBtn.Location = new System.Drawing.Point(33, 393);
-            this.optionCRBtn.Name = "optionCRBtn";
-            this.optionCRBtn.Size = new System.Drawing.Size(79, 20);
-            this.optionCRBtn.TabIndex = 9;
-            this.optionCRBtn.TabStop = true;
-            this.optionCRBtn.Text = "Option C";
-            this.optionCRBtn.UseVisualStyleBackColor = true;
-            // 
-            // optionDRBtn
-            // 
-            this.optionDRBtn.AutoSize = true;
-            this.optionDRBtn.Location = new System.Drawing.Point(33, 444);
-            this.optionDRBtn.Name = "optionDRBtn";
-            this.optionDRBtn.Size = new System.Drawing.Size(80, 20);
-            this.optionDRBtn.TabIndex = 10;
-            this.optionDRBtn.TabStop = true;
-            this.optionDRBtn.Text = "Option D";
-            this.optionDRBtn.UseVisualStyleBackColor = true;
             // 
             // submitAnswerBtn
             // 
@@ -228,11 +164,29 @@
             this.resultLbl.TabIndex = 19;
             this.resultLbl.Text = "Results";
             // 
-            // triviaChallenge
+            // answerTxt
+            // 
+            this.answerTxt.Location = new System.Drawing.Point(33, 340);
+            this.answerTxt.Name = "answerTxt";
+            this.answerTxt.Size = new System.Drawing.Size(327, 22);
+            this.answerTxt.TabIndex = 20;
+            // 
+            // answerLbl
+            // 
+            this.answerLbl.AutoSize = true;
+            this.answerLbl.Location = new System.Drawing.Point(34, 284);
+            this.answerLbl.Name = "answerLbl";
+            this.answerLbl.Size = new System.Drawing.Size(114, 16);
+            this.answerLbl.TabIndex = 21;
+            this.answerLbl.Text = "Type your answer";
+            // 
+            // TriviaChallenge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 615);
+            this.Controls.Add(this.answerLbl);
+            this.Controls.Add(this.answerTxt);
             this.Controls.Add(this.resultLbl);
             this.Controls.Add(this.resultLst);
             this.Controls.Add(this.questionNumberLbl);
@@ -242,17 +196,11 @@
             this.Controls.Add(this.questionTitleLbl);
             this.Controls.Add(this.nextQuestionBtn);
             this.Controls.Add(this.submitAnswerBtn);
-            this.Controls.Add(this.optionDRBtn);
-            this.Controls.Add(this.optionCRBtn);
-            this.Controls.Add(this.optionBRBtn);
-            this.Controls.Add(this.optionARBtn);
             this.Controls.Add(this.howToPlayBtn);
             this.Controls.Add(this.startGameBtn);
-            this.Controls.Add(this.playerNameTxt);
-            this.Controls.Add(this.playerNameLbl);
             this.Controls.Add(this.subTitleLbl);
             this.Controls.Add(this.titleLbl);
-            this.Name = "triviaChallenge";
+            this.Name = "TriviaChallenge";
             this.Text = "Tivia Challenge";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -263,14 +211,8 @@
 
         private System.Windows.Forms.Label titleLbl;
         private System.Windows.Forms.Label subTitleLbl;
-        private System.Windows.Forms.Label playerNameLbl;
-        private System.Windows.Forms.TextBox playerNameTxt;
         private System.Windows.Forms.Button startGameBtn;
         private System.Windows.Forms.Button howToPlayBtn;
-        private System.Windows.Forms.RadioButton optionARBtn;
-        private System.Windows.Forms.RadioButton optionBRBtn;
-        private System.Windows.Forms.RadioButton optionCRBtn;
-        private System.Windows.Forms.RadioButton optionDRBtn;
         private System.Windows.Forms.Button submitAnswerBtn;
         private System.Windows.Forms.Button nextQuestionBtn;
         private System.Windows.Forms.Label questionTitleLbl;
@@ -280,6 +222,8 @@
         private System.Windows.Forms.Label questionNumberLbl;
         private System.Windows.Forms.ListBox resultLst;
         private System.Windows.Forms.Label resultLbl;
+        private System.Windows.Forms.TextBox answerTxt;
+        private System.Windows.Forms.Label answerLbl;
     }
 }
 

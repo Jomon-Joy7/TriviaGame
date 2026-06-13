@@ -10,9 +10,11 @@ using System.Windows.Forms;
 
 namespace TriviaGame
 {
-    public partial class triviaChallenge : Form
+    public partial class TriviaChallenge : Form
     {
-        public triviaChallenge()
+
+       
+        public TriviaChallenge()
         {
             InitializeComponent();
         }
