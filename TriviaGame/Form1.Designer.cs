@@ -41,8 +41,11 @@
             this.questionNumberLbl = new System.Windows.Forms.Label();
             this.resultLst = new System.Windows.Forms.ListBox();
             this.resultLbl = new System.Windows.Forms.Label();
-            this.answerTxt = new System.Windows.Forms.TextBox();
             this.answerLbl = new System.Windows.Forms.Label();
+            this.categoryLbl = new System.Windows.Forms.Label();
+            this.categoryResultLbl = new System.Windows.Forms.Label();
+            this.answerTxt = new System.Windows.Forms.TextBox();
+            this.previousBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // titleLbl
@@ -73,6 +76,7 @@
             this.startGameBtn.TabIndex = 4;
             this.startGameBtn.Text = "Start Game";
             this.startGameBtn.UseVisualStyleBackColor = true;
+            this.startGameBtn.Click += new System.EventHandler(this.startGameBtn_Click);
             // 
             // howToPlayBtn
             // 
@@ -82,6 +86,7 @@
             this.howToPlayBtn.TabIndex = 5;
             this.howToPlayBtn.Text = "How To Play?";
             this.howToPlayBtn.UseVisualStyleBackColor = true;
+            this.howToPlayBtn.Click += new System.EventHandler(this.howToPlayBtn_Click);
             // 
             // submitAnswerBtn
             // 
@@ -95,7 +100,7 @@
             // 
             // nextQuestionBtn
             // 
-            this.nextQuestionBtn.Location = new System.Drawing.Point(322, 519);
+            this.nextQuestionBtn.Location = new System.Drawing.Point(424, 519);
             this.nextQuestionBtn.Name = "nextQuestionBtn";
             this.nextQuestionBtn.Size = new System.Drawing.Size(128, 42);
             this.nextQuestionBtn.TabIndex = 12;
@@ -106,7 +111,7 @@
             // questionTitleLbl
             // 
             this.questionTitleLbl.AutoSize = true;
-            this.questionTitleLbl.Location = new System.Drawing.Point(31, 189);
+            this.questionTitleLbl.Location = new System.Drawing.Point(31, 242);
             this.questionTitleLbl.Name = "questionTitleLbl";
             this.questionTitleLbl.Size = new System.Drawing.Size(63, 16);
             this.questionTitleLbl.TabIndex = 13;
@@ -115,7 +120,7 @@
             // questionLbl
             // 
             this.questionLbl.AutoSize = true;
-            this.questionLbl.Location = new System.Drawing.Point(30, 232);
+            this.questionLbl.Location = new System.Drawing.Point(30, 287);
             this.questionLbl.Name = "questionLbl";
             this.questionLbl.Size = new System.Drawing.Size(158, 16);
             this.questionLbl.TabIndex = 14;
@@ -124,7 +129,7 @@
             // scoreTitleLbl
             // 
             this.scoreTitleLbl.AutoSize = true;
-            this.scoreTitleLbl.Location = new System.Drawing.Point(852, 30);
+            this.scoreTitleLbl.Location = new System.Drawing.Point(796, 36);
             this.scoreTitleLbl.Name = "scoreTitleLbl";
             this.scoreTitleLbl.Size = new System.Drawing.Size(46, 16);
             this.scoreTitleLbl.TabIndex = 15;
@@ -133,7 +138,7 @@
             // scoreLbl
             // 
             this.scoreLbl.AutoSize = true;
-            this.scoreLbl.Location = new System.Drawing.Point(919, 30);
+            this.scoreLbl.Location = new System.Drawing.Point(863, 36);
             this.scoreLbl.Name = "scoreLbl";
             this.scoreLbl.Size = new System.Drawing.Size(14, 16);
             this.scoreLbl.TabIndex = 16;
@@ -152,41 +157,72 @@
             // 
             this.resultLst.FormattingEnabled = true;
             this.resultLst.ItemHeight = 16;
-            this.resultLst.Location = new System.Drawing.Point(855, 111);
+            this.resultLst.Location = new System.Drawing.Point(799, 111);
             this.resultLst.Name = "resultLst";
-            this.resultLst.Size = new System.Drawing.Size(120, 116);
+            this.resultLst.Size = new System.Drawing.Size(176, 212);
             this.resultLst.TabIndex = 18;
             // 
             // resultLbl
             // 
             this.resultLbl.AutoSize = true;
-            this.resultLbl.Location = new System.Drawing.Point(852, 80);
+            this.resultLbl.Location = new System.Drawing.Point(796, 80);
             this.resultLbl.Name = "resultLbl";
             this.resultLbl.Size = new System.Drawing.Size(52, 16);
             this.resultLbl.TabIndex = 19;
             this.resultLbl.Text = "Results";
             // 
-            // answerTxt
-            // 
-            this.answerTxt.Location = new System.Drawing.Point(33, 340);
-            this.answerTxt.Name = "answerTxt";
-            this.answerTxt.Size = new System.Drawing.Size(327, 22);
-            this.answerTxt.TabIndex = 20;
-            // 
             // answerLbl
             // 
             this.answerLbl.AutoSize = true;
-            this.answerLbl.Location = new System.Drawing.Point(34, 284);
+            this.answerLbl.Location = new System.Drawing.Point(31, 345);
             this.answerLbl.Name = "answerLbl";
             this.answerLbl.Size = new System.Drawing.Size(114, 16);
             this.answerLbl.TabIndex = 21;
             this.answerLbl.Text = "Type your answer";
+            // 
+            // categoryLbl
+            // 
+            this.categoryLbl.AutoSize = true;
+            this.categoryLbl.Location = new System.Drawing.Point(31, 211);
+            this.categoryLbl.Name = "categoryLbl";
+            this.categoryLbl.Size = new System.Drawing.Size(65, 16);
+            this.categoryLbl.TabIndex = 22;
+            this.categoryLbl.Text = "Category:";
+            // 
+            // categoryResultLbl
+            // 
+            this.categoryResultLbl.AutoSize = true;
+            this.categoryResultLbl.Location = new System.Drawing.Point(123, 211);
+            this.categoryResultLbl.Name = "categoryResultLbl";
+            this.categoryResultLbl.Size = new System.Drawing.Size(93, 16);
+            this.categoryResultLbl.TabIndex = 23;
+            this.categoryResultLbl.Text = "Category area";
+            // 
+            // answerTxt
+            // 
+            this.answerTxt.Location = new System.Drawing.Point(33, 384);
+            this.answerTxt.Name = "answerTxt";
+            this.answerTxt.Size = new System.Drawing.Size(327, 22);
+            this.answerTxt.TabIndex = 20;
+            // 
+            // previousBtn
+            // 
+            this.previousBtn.Location = new System.Drawing.Point(244, 519);
+            this.previousBtn.Name = "previousBtn";
+            this.previousBtn.Size = new System.Drawing.Size(75, 42);
+            this.previousBtn.TabIndex = 24;
+            this.previousBtn.Text = "Previous";
+            this.previousBtn.UseVisualStyleBackColor = true;
+            this.previousBtn.Click += new System.EventHandler(this.previousBtn_Click);
             // 
             // TriviaChallenge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 615);
+            this.Controls.Add(this.previousBtn);
+            this.Controls.Add(this.categoryResultLbl);
+            this.Controls.Add(this.categoryLbl);
             this.Controls.Add(this.answerLbl);
             this.Controls.Add(this.answerTxt);
             this.Controls.Add(this.resultLbl);
@@ -224,8 +260,11 @@
         private System.Windows.Forms.Label questionNumberLbl;
         private System.Windows.Forms.ListBox resultLst;
         private System.Windows.Forms.Label resultLbl;
-        private System.Windows.Forms.TextBox answerTxt;
         private System.Windows.Forms.Label answerLbl;
+        private System.Windows.Forms.Label categoryLbl;
+        private System.Windows.Forms.Label categoryResultLbl;
+        private System.Windows.Forms.TextBox answerTxt;
+        private System.Windows.Forms.Button previousBtn;
     }
 }
 

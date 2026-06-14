@@ -12,19 +12,19 @@ namespace TriviaGame
         private int score;
 
 
-        public string Name 
+        public string Name    //property
         { 
             get { return name; } 
             set { name = value; } 
         }
 
-        public int Score
+        public int Score    //property 
         {
             get { return score; }
             set { score = value;}
         }
 
-        public Player(string name) 
+        public Player(string name)   //constructor
         {
             Name = name;
             Score = 0;
