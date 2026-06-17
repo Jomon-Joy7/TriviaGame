@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Jomon Joy
+//This class controls the trivia game, displays questions,
+//check answers and keep track of score.
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,18 +24,17 @@ namespace TriviaGame
             InitializeComponent();
             ChangeVisibility(false);
 
-            player = new Player("Jomon");
 
-            questions[0] = new TriviaQuestion("What is the capital of Canada?", "Ottawa", "Geography", new string[] { "Ottawa", "something", "something", "something" });
-            questions[1] = new TriviaQuestion("What is 15 x 4?", "60", "Math", new string[] { "Ottawa", "something", "something", "something" });
-            questions[2] = new TriviaQuestion("Which planet is known as the Red Planet?", "Mars", "Science", new string[] { "Ottawa", "something", "something", "something" }   );
-            questions[3] = new TriviaQuestion("How many players are on a soccer team on the field?", "11", "Sports", new string[] { "Ottawa", "something", "something", "something" });
-            questions[4] = new TriviaQuestion("What is the largest ocean on Earth?", "Pacific", "Geography", new string[] { "Ottawa", "something", "something", "something" });
-            questions[5] = new TriviaQuestion("What is the square root of 81?", "9", "Math", new string[] { "Ottawa", "something", "something", "something" });
-            questions[6] = new TriviaQuestion("Which animal is known as the King of the Jungle?", "Lion", "Animal", new string[] { "Ottawa", "something", "something", "something" });
-            questions[7] = new TriviaQuestion("What does CPU stand for?", "Central Processing Unit", "Technology", new string[] { "Ottawa", "something", "something", "something" });
-            questions[8] = new TriviaQuestion("What color do you get when you mix red and blue?", "Purple", "Fun Facts", new string[] { "Ottawa", "something", "something", "something" });
-            questions[9] = new TriviaQuestion("How many continents are there on Earth?", "7", "Geography", new string[] { "Ottawa", "something", "something", "something" });
+            questions[0] = new TriviaQuestion("1. What is the capital of Canada?", "Ottawa", "Geography" );
+            questions[1] = new TriviaQuestion("2. What is 15 x 4?", "60", "Math");
+            questions[2] = new TriviaQuestion("3. Which planet is known as the Red Planet?", "Mars", "Science");
+            questions[3] = new TriviaQuestion("4. How many players are on a soccer team on the field?", "11", "Sports");
+            questions[4] = new TriviaQuestion("5. What is the largest ocean on Earth?", "Pacific", "Geography");
+            questions[5] = new TriviaQuestion("6. What is the square root of 81?", "9", "Math");
+            questions[6] = new TriviaQuestion("7. Which animal is known as the King of the Jungle?", "Lion", "Animal");
+            questions[7] = new TriviaQuestion("8. What does CPU stand for?", "Central Processing Unit", "Technology");
+            questions[8] = new TriviaQuestion("9. What color do you get when you mix red and blue?", "Purple", "Fun Facts");
+            questions[9] = new TriviaQuestion("10. How many continents are there on Earth?", "7", "Geography");
 
             for (int i = 0; i < questions.Length; i++)
             {
@@ -44,12 +46,6 @@ namespace TriviaGame
             ShowQuestionNumber();
         }
 
-        private void startGameBtn_Click(object sender, EventArgs e)
-        {
-            ChangeVisibility(true);
-
-        }
-
         private void ChangeVisibility(bool visibility )
         {
             categoryLbl.Visible = visibility;
@@ -59,6 +55,7 @@ namespace TriviaGame
             answerLbl.Visible = visibility;
             answerTxt.Visible = visibility;
             submitAnswerBtn.Visible = visibility;
+            previousQuestionBtn.Visible = visibility;
             nextQuestionBtn.Visible = visibility;
             questionNumberLbl.Visible = visibility;
             scoreLbl.Visible = visibility;
@@ -67,13 +64,43 @@ namespace TriviaGame
             scoreTitleLbl.Visible = visibility;
         }
 
+        private void ShowQuestionNumber()
+        {
+            questionNumberLbl.Text = "Question: " + (current + 1).ToString() + "/" + questions.Length.ToString();
+        }
+
+
+        private void startGameBtn_Click(object sender, EventArgs e)
+        {
+            
+            if (playerNameTbx.Text.Trim() == "")
+            {
+                MessageBox.Show("Please enter your name.");
+                return;
+            }
+
+            player = new Player(playerNameTbx.Text);
+
+            ChangeVisibility(true);
+        }
+
+        private void howToPlayBtn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("How To Play\n\n" +
+                "1. Enter your name.\n" +
+                "2. Click Start.\n" + "3. Answer each trivia question.\n" +
+                "4. Gain 1 point for every correct answer.\n" +
+                "5. Try to get 10/10!\n\n" + 
+                "I like trivia games because they are fun and test knowledge.");
+        }
+
+
         private void submitAnswerBtn_Click(object sender, EventArgs e)
         {
             string answer = answerTxt.Text;
-            if(answer == "")
+            if(answer.Trim() == "")
             {
                 MessageBox.Show("Please enter your answer");
-
             }
             else
             {
@@ -94,8 +121,8 @@ namespace TriviaGame
 
         }
 
-        private void nextQuestionBtn_Click(object sender, EventArgs e)
-        {
+        private void nextQuestionBtn_Click(object sender, EventArgs e) 
+        {       
             if (current < questions.Length - 1)
             {
                 current++;
@@ -105,24 +132,27 @@ namespace TriviaGame
             }
             else
             {
-                MessageBox.Show("Quiz Completed!");
+                MessageBox.Show("Quiz Completed!\n\n" + "Player: " + player.Name + "\nScore: " + player.Score + "/" + questions.Length);
+
+                if (player.Score >= 8)
+                {
+                    MessageBox.Show("Excellent! You Nailed it");
+                }
+                else if (player.Score >= 5)
+                {
+                    MessageBox.Show("Good Job!");
+                }
+                else
+                {
+                    MessageBox.Show("Give it other short!");
+                }
             }
 
         }
-
-       private void ShowQuestionNumber()
+        private void previousQuestionBtn_Click(object sender, EventArgs e)
         {
-            questionNumberLbl.Text = "Question: " + (current + 1).ToString() + "/" + questions.Length.ToString();
-        }
 
-        private void howToPlayBtn_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("follow the question"+ "\nfollow");
-        }
-
-        private void previousBtn_Click(object sender, EventArgs e)
-        {
-            if (current>0)
+            if (current > 0)
             {
                 current--;
                 questionLbl.Text = questions[current].Question;
@@ -135,4 +165,5 @@ namespace TriviaGame
             }
         }
     }
+        
 }

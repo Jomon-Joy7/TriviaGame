@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Trivia Question class
+//This class stores the question, answer,category and result for
+//each trivia questions 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,11 +12,10 @@ namespace TriviaGame
     internal class TriviaQuestion
     {
         private string question;
-        string[] options = new string[4];
         private string answer;
 
         public string Category { get; set; }   //auto implemented property
-        public int Result { get; set; }
+        public int Result { get; set; }       //auto implemented property
 
         public string Question          //non - auto implementated property
         {
@@ -26,20 +28,15 @@ namespace TriviaGame
             get { return answer; }     
             set {  answer = value; }
         }
-        public string[] Options
-        {
-            get { return options; }
-            set {  options = value; }
+       
 
-        } 
-
-        public TriviaQuestion(string question, string answer, string category, string[] options)
+        public TriviaQuestion(string question, string answer, string category)   //constructor2
         {
             Question = question;
             Answer = answer;
             Category = category;
             Result = 0;
-            Options = options;
+           
         }
 
     }

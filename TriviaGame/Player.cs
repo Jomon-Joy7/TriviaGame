@@ -1,4 +1,6 @@
-﻿using System;
+﻿//Player Class
+//This class stores player information like name and scores 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,19 +14,25 @@ namespace TriviaGame
         private int score;
 
 
-        public string Name    //property
+        public string Name    //non - auto implemented properties with validation logic
         { 
             get { return name; } 
-            set { name = value; } 
+            set 
+            {
+                if (value.Trim() != "")
+                {
+                    name = value;
+                }
+            } 
         }
 
-        public int Score    //property 
+        public int Score    //non - auto implemented property 
         {
             get { return score; }
             set { score = value;}
         }
 
-        public Player(string name)   //constructor
+        public Player(string name)   //constructor1
         {
             Name = name;
             Score = 0;
