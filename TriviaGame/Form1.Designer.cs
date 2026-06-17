@@ -47,6 +47,8 @@
             this.previousQuestionBtn = new System.Windows.Forms.Button();
             this.playerNameLbl = new System.Windows.Forms.Label();
             this.playerNameTbx = new System.Windows.Forms.TextBox();
+            this.savePlayerBtn = new System.Windows.Forms.Button();
+            this.loadPlayerBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // titleLbl
@@ -55,7 +57,7 @@
             this.titleLbl.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLbl.Location = new System.Drawing.Point(235, 9);
             this.titleLbl.Name = "titleLbl";
-            this.titleLbl.Size = new System.Drawing.Size(430, 60);
+            this.titleLbl.Size = new System.Drawing.Size(422, 59);
             this.titleLbl.TabIndex = 0;
             this.titleLbl.Text = "TRIVIA CHALLENGE";
             // 
@@ -245,12 +247,34 @@
             this.playerNameTbx.Size = new System.Drawing.Size(254, 27);
             this.playerNameTbx.TabIndex = 26;
             // 
+            // savePlayerBtn
+            // 
+            this.savePlayerBtn.Location = new System.Drawing.Point(450, 437);
+            this.savePlayerBtn.Name = "savePlayerBtn";
+            this.savePlayerBtn.Size = new System.Drawing.Size(120, 35);
+            this.savePlayerBtn.TabIndex = 27;
+            this.savePlayerBtn.Text = "Save Player";
+            this.savePlayerBtn.UseVisualStyleBackColor = true;
+            this.savePlayerBtn.Click += new System.EventHandler(this.savePlayerBtn_Click);
+            // 
+            // loadPlayerBtn
+            // 
+            this.loadPlayerBtn.Location = new System.Drawing.Point(630, 437);
+            this.loadPlayerBtn.Name = "loadPlayerBtn";
+            this.loadPlayerBtn.Size = new System.Drawing.Size(111, 35);
+            this.loadPlayerBtn.TabIndex = 28;
+            this.loadPlayerBtn.Text = "Load Player";
+            this.loadPlayerBtn.UseVisualStyleBackColor = true;
+            this.loadPlayerBtn.Click += new System.EventHandler(this.loadPlayerBtn_Click);
+            // 
             // TriviaChallenge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1014, 615);
+            this.Controls.Add(this.loadPlayerBtn);
+            this.Controls.Add(this.savePlayerBtn);
             this.Controls.Add(this.playerNameTbx);
             this.Controls.Add(this.playerNameLbl);
             this.Controls.Add(this.previousQuestionBtn);
@@ -298,6 +322,8 @@
         private System.Windows.Forms.Button previousQuestionBtn;
         private System.Windows.Forms.Label playerNameLbl;
         private System.Windows.Forms.TextBox playerNameTbx;
+        private System.Windows.Forms.Button savePlayerBtn;
+        private System.Windows.Forms.Button loadPlayerBtn;
     }
 }
 

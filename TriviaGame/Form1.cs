@@ -10,6 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Text.Json;
+
 
 namespace TriviaGame
 {
@@ -62,6 +65,8 @@ namespace TriviaGame
             resultLst.Visible = visibility;
             resultLbl.Visible = visibility;
             scoreTitleLbl.Visible = visibility;
+            savePlayerBtn.Visible = visibility;
+    
         }
 
         private void ShowQuestionNumber()
@@ -144,7 +149,7 @@ namespace TriviaGame
                 }
                 else
                 {
-                    MessageBox.Show("Give it other short!");
+                    MessageBox.Show("Give it another short!");
                 }
             }
 
@@ -163,6 +168,26 @@ namespace TriviaGame
             {
                 MessageBox.Show("You can't go back!");
             }
+        }
+
+        private void savePlayerBtn_Click(object sender, EventArgs e)
+        { 
+            string json = JsonSerializer.Serialize(player);
+            File.WriteAllText("player.json", json);
+            MessageBox.Show("Player Saved");
+                     
+        }
+
+        private void loadPlayerBtn_Click(object sender, EventArgs e)
+        {
+            string json = File.ReadAllText("player.json");
+            player = JsonSerializer.Deserialize<Player>(json);
+
+            
+            playerNameTbx.Text = player.Name;
+            scoreLbl.Text = player.Score.ToString();
+
+            MessageBox.Show("Name: " + player.Name + "\nScore: " + player.Score);
         }
     }
         
