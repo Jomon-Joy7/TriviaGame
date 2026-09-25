@@ -1,28 +1,28 @@
 # Trivia Challenge Game
 
-A 10-question trivia game developed using C# and Windows Forms as a college programming project.
+This is a trivia game I created using C# and Windows Forms for a college programming project.
 
 ## Features
 
-- 10-question trivia quiz
+- 10 trivia questions
 - Score tracking
-- Previous and Next question navigation
-- Answer validation
-- Player name and score management
+- Next and Previous question buttons
+- Answer checking
+- Player name and score
 - Save and Load player information using JSON
-- Game instructions and result messages
+- Instructions for how to play
 
-## Object-Oriented Programming
+## OOP Concepts
 
-The project uses OOP concepts including:
+This project uses:
 
-- Custom `Player` class
-- Custom `TriviaQuestion` class
+- Player class
+- TriviaQuestion class
 - Properties
 - Constructors
 - Private fields
-- Property validation
-- Event-driven programming
+- Input validation
+- Event handlers
 
 ## Technologies
 
@@ -30,20 +30,19 @@ The project uses OOP concepts including:
 - Windows Forms
 - JSON
 - Visual Studio
-- Git & GitHub
+- Git and GitHub
 
 ## How to Play
 
 1. Enter your name.
-2. Click **Start Game**.
-3. Read each trivia question.
-4. Enter your answer.
-5. Click **Submit Answer**.
-6. Use **Next Question** and **Previous Question** to navigate.
-7. Earn 1 point for each correct answer.
-8. Use **Save Player** to save your player information.
-9. Use **Load Player** to load previously saved player information.
+2. Click Start.
+3. Read the question and enter your answer.
+4. Click Submit Answer.
+5. Use Next and Previous to move between questions.
+6. Get 1 point for each correct answer.
+7. Use Save Player to save your information.
+8. Use Load Player to load your saved information.
 
-## Project Purpose
+## About the Project
 
-This project was created to practice C# programming, object-oriented programming, Windows Forms, event handling, input validation, and JSON-based file persistence.
+I created this project to practice C# programming and learn more about Windows Forms, OOP, event handling, input validation, and saving data to a file using JSON.
